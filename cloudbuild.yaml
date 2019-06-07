@@ -7,7 +7,7 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/jet-airbase-builder:1.8'
   - '-f'
-  - './jet/Dockerfile_airbase'
+  - './jet/Dockerfile_airbase-builder'
   - './jet'
 
 images:
