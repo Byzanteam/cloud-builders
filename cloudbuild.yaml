@@ -2,9 +2,12 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '-t gcr.io/$PROJECT_ID/jet-airbase-builder:latest'
-  - '-t gcr.io/$PROJECT_ID/jet-airbase-builder:1.8'
-  - '-f ./jet/Dockerfile_airbase'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/jet-airbase-builder:latest'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/jet-airbase-builder:1.8'
+  - '-f'
+  - './jet/Dockerfile_airbase'
   - './jet'
 
 images:
