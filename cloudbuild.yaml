@@ -10,6 +10,11 @@ steps:
   - './jet/Dockerfile_airbase-builder'
   - './jet'
 
-images:
-- 'gcr.io/$PROJECT_ID/jet-airbase-builder:latest'
-- 'gcr.io/$PROJECT_ID/jet-airbase-builder:1.8'
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    echo "Push jet-airbase-builder"
+    [[ "$BRANCH_NAME" == "master" ]] && docker push gcr.io/$PROJECT_ID/jet-airbase-builder:latest
+    [[ "$BRANCH_NAME" == "master" ]] && docker push gcr.io/$PROJECT_ID/jet-airbase-builder:1.8
